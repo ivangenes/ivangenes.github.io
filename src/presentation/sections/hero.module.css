@@ -1,0 +1,275 @@
+.hero {
+  position: relative;
+  min-height: min(52rem, calc(100svh - 5.5rem));
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.inner {
+  display: flex;
+  min-height: inherit;
+  flex-direction: column;
+  padding-block: clamp(2rem, 5vw, 4.5rem) clamp(3.5rem, 7vw, 6.5rem);
+}
+
+.metaRow,
+.bottomGrid {
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.75fr) minmax(18rem, 1.25fr);
+  gap: var(--grid-gap);
+}
+
+.metaRow {
+  align-items: center;
+}
+
+.availability,
+.index,
+.specialties {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.availability {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.availability span {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--color-silver-dark);
+  box-shadow: 0 0 0 0.25rem rgb(133 139 146 / 12%);
+}
+
+.index {
+  justify-self: end;
+}
+
+.titleComposition {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  flex: 1;
+  align-items: center;
+  padding-block: clamp(3rem, 7vw, 7.5rem);
+}
+
+.titleComposition h1 {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: min(75%, 64rem);
+  flex-direction: column;
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: clamp(5.2rem, 14.2vw, 13.5rem);
+  font-weight: 440;
+  letter-spacing: -0.085em;
+  line-height: 0.69;
+}
+
+.lastName {
+  align-self: flex-start;
+  margin-left: 0.16em;
+}
+
+.role {
+  position: absolute;
+  top: 72%;
+  right: 2%;
+  z-index: 3;
+  padding: 0.6rem 0.8rem;
+  margin: 0;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-size: clamp(0.68rem, 1vw, 0.8rem);
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.silverMark {
+  position: absolute;
+  top: 48%;
+  right: 2%;
+  width: clamp(10rem, 22vw, 20rem);
+  aspect-ratio: 1;
+  transform: translateY(-50%) rotate(28deg);
+}
+
+.silverMark::before,
+.silverMark::after,
+.orbitHorizontal,
+.orbitVertical,
+.orbitDiagonal {
+  position: absolute;
+  border: 1px solid rgb(102 109 116 / 24%);
+  border-radius: 50%;
+  content: "";
+  inset: 0;
+}
+
+.silverMark::before {
+  background: radial-gradient(
+    circle at 30% 28%,
+    rgb(255 255 255 / 96%),
+    rgb(201 205 210 / 60%) 38%,
+    rgb(112 119 126 / 30%) 65%,
+    transparent 69%
+  );
+  box-shadow:
+    inset -1.5rem -2rem 4rem rgb(48 53 58 / 16%),
+    0 2rem 6rem rgb(15 18 21 / 12%);
+}
+
+.silverMark::after {
+  width: 42%;
+  height: 42%;
+  margin: auto;
+  border-color: rgb(255 255 255 / 70%);
+  box-shadow: 0 0 0 1.5rem rgb(255 255 255 / 8%);
+}
+
+.orbitHorizontal {
+  transform: rotateX(68deg);
+}
+
+.orbitVertical {
+  transform: rotateY(68deg);
+}
+
+.orbitDiagonal {
+  transform: rotate(55deg) scaleX(0.25);
+}
+
+.bottomGrid {
+  align-items: end;
+}
+
+.specialties {
+  max-width: 18rem;
+  line-height: 1.8;
+}
+
+.introduction {
+  width: min(100%, 42rem);
+  justify-self: end;
+}
+
+.introduction > p {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.1vw, 2rem);
+  letter-spacing: -0.025em;
+  line-height: 1.35;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 2rem;
+}
+
+.actions a {
+  color: var(--color-ink);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.primaryAction {
+  display: inline-flex;
+  min-height: 3.1rem;
+  align-items: center;
+  gap: 1.5rem;
+  padding-inline: 1.25rem;
+  border-radius: 999px;
+  background: var(--color-ink);
+  color: var(--color-paper) !important;
+}
+
+.primaryAction svg {
+  width: 1rem;
+}
+
+@media (width <= 760px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .inner {
+    padding-block: 2rem 4rem;
+  }
+
+  .metaRow,
+  .bottomGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .index {
+    display: none;
+  }
+
+  .titleComposition {
+    min-height: 32rem;
+    align-items: end;
+    padding-block: 0 2rem;
+  }
+
+  .titleComposition h1 {
+    width: 100%;
+    font-size: clamp(4.8rem, 26vw, 8rem);
+    line-height: 0.75;
+  }
+
+  .lastName {
+    align-self: flex-start;
+    margin-left: 0.2em;
+  }
+
+  .role {
+    top: 11rem;
+    left: auto;
+    right: 0;
+  }
+
+  .silverMark {
+    top: 1rem;
+    right: 0;
+    left: auto;
+    width: 10rem;
+    transform: rotate(28deg);
+  }
+
+  .bottomGrid {
+    gap: 2rem;
+  }
+
+  .introduction {
+    justify-self: start;
+  }
+}
+
+@media (width <= 380px) {
+  .titleComposition h1 {
+    font-size: 4.2rem;
+  }
+
+  .actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

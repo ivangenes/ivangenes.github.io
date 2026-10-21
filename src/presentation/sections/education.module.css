@@ -1,0 +1,88 @@
+.section {
+  padding-block: var(--section-space);
+  background: var(--color-paper);
+}
+
+.headingRow {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.75fr) minmax(18rem, 1.25fr);
+  gap: var(--grid-gap);
+  margin-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.headingRow > p,
+.degrees article > span,
+.institution p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.headingRow > p {
+  margin-top: 0.55rem;
+}
+
+.headingRow h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 450;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.degrees {
+  border-top: 1px solid var(--color-line-strong);
+}
+
+.degrees article {
+  display: grid;
+  grid-template-columns: minmax(4rem, 0.3fr) minmax(18rem, 1.1fr) minmax(14rem, 0.8fr);
+  gap: var(--grid-gap);
+  padding-block: clamp(2.5rem, 4vw, 4rem);
+  border-bottom: 1px solid var(--color-line-strong);
+}
+
+.degrees h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-weight: 450;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.focus {
+  margin: 0.85rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.institution {
+  align-self: end;
+}
+
+.institutionMeta {
+  margin-top: 0 !important;
+}
+
+.institutionMeta + .institutionMeta {
+  margin-top: 0.35rem !important;
+}
+
+@media (width <= 760px) {
+  .headingRow,
+  .degrees article {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .institution {
+    margin-top: 1rem;
+  }
+}

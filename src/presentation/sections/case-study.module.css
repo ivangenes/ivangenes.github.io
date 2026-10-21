@@ -1,0 +1,373 @@
+/* stylelint-disable no-descending-specificity -- Shared case-study typography is intentionally grouped across sections. */
+.hero {
+  padding-block: clamp(4rem, 10vw, 9rem) clamp(4rem, 8vw, 7rem);
+  border-bottom: 1px solid var(--color-line-strong);
+  background: var(--color-canvas);
+}
+
+.heroMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.heroMeta a,
+.heroMeta p,
+.facts dt,
+.sectionLabel span,
+.architectureHeading > p,
+.decisionGrid article > span,
+.note > p:first-child,
+.caseNavigation span {
+  color: var(--color-muted);
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.heroMeta p {
+  margin: 0;
+  text-align: right;
+}
+
+.hero h1 {
+  margin: clamp(4rem, 9vw, 9rem) 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 15vw, 14rem);
+  font-weight: 440;
+  letter-spacing: -0.085em;
+  line-height: 0.74;
+}
+
+.title {
+  max-width: 35rem;
+  margin: clamp(2rem, 4vw, 4rem) 0 0 auto;
+  color: var(--color-ink-soft);
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 3.4rem);
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0;
+  margin: clamp(4rem, 8vw, 8rem) 0 0;
+  border-top: 1px solid var(--color-line-strong);
+}
+
+.facts div {
+  padding: 1.25rem 1.25rem 0 0;
+  border-right: 1px solid var(--color-line);
+}
+
+.facts div + div {
+  padding-left: 1.25rem;
+}
+
+.facts div:last-child {
+  border-right: 0;
+}
+
+.facts dd {
+  margin: 0.8rem 0 0;
+  color: var(--color-ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.story,
+.engineering {
+  background: var(--color-paper);
+}
+
+.proseSection,
+.additionalSection,
+.decisions,
+.technology,
+.outcome {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.75fr) minmax(20rem, 1.25fr);
+  gap: var(--grid-gap);
+  padding-block: clamp(4rem, 8vw, 8rem);
+  border-bottom: 1px solid var(--color-line-strong);
+}
+
+.sectionLabel {
+  display: grid;
+  align-content: start;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 1rem;
+}
+
+.sectionLabel h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-weight: 450;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.prose {
+  max-width: 47rem;
+}
+
+.prose p {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  letter-spacing: -0.02em;
+  line-height: 1.55;
+}
+
+.prose p + p {
+  margin-top: 1.5rem;
+}
+
+.additionalItems,
+.decisionGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--color-line-strong);
+  border-left: 1px solid var(--color-line-strong);
+}
+
+.additionalItems article,
+.decisionGrid article {
+  min-height: 15rem;
+  padding: 1.5rem;
+  border-right: 1px solid var(--color-line-strong);
+  border-bottom: 1px solid var(--color-line-strong);
+}
+
+.additionalItems h3,
+.decisionGrid h3 {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.5vw, 2.25rem);
+  font-weight: 450;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+.additionalItems p,
+.decisionGrid p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.84rem;
+  line-height: 1.7;
+}
+
+.architecture {
+  padding-block: var(--section-space);
+  background: var(--color-graphite);
+  color: var(--color-paper);
+}
+
+.architectureHeading {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.75fr) minmax(20rem, 1.25fr);
+  gap: var(--grid-gap);
+  margin-bottom: clamp(3rem, 6vw, 6rem);
+}
+
+.architectureHeading > p {
+  margin: 0.5rem 0 0;
+  color: var(--color-silver);
+}
+
+.architectureHeading h2 {
+  max-width: 13ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 430;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.architectureHeading div > p {
+  max-width: 44rem;
+  margin: 2rem 0 0;
+  color: var(--color-graphite-text);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.decisionGrid article {
+  display: flex;
+  flex-direction: column;
+}
+
+.decisionGrid article > span {
+  margin-bottom: auto;
+}
+
+.decisionGrid h3 {
+  margin-top: 4rem;
+}
+
+.technology ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: start;
+  padding: 0;
+  margin: 0;
+  gap: 0.65rem;
+  list-style: none;
+}
+
+.technology li {
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--color-line-strong);
+  border-radius: 999px;
+  color: var(--color-ink-soft);
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+}
+
+.outcome > p {
+  max-width: 47rem;
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.8rem);
+  letter-spacing: -0.03em;
+  line-height: 1.35;
+}
+
+.outcome > a {
+  display: inline-flex;
+  grid-column: 2;
+  width: fit-content;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-ink);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.outcome svg {
+  width: 1rem;
+}
+
+.note {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.75fr) minmax(20rem, 1.25fr);
+  gap: var(--grid-gap);
+  padding: 1.5rem;
+  margin-block: clamp(3rem, 6vw, 6rem);
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-silver-soft);
+}
+
+.note p {
+  margin: 0;
+}
+
+.note > p:last-child {
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+.caseNavigation {
+  border-top: 1px solid var(--color-line-strong);
+  background: var(--color-canvas);
+}
+
+.caseNavigationInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.caseNavigation a {
+  display: flex;
+  min-height: 12rem;
+  padding-block: 2rem;
+  color: var(--color-ink);
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.caseNavigation a:last-child {
+  align-items: flex-end;
+  padding-left: 2rem;
+  border-left: 1px solid var(--color-line-strong);
+  text-align: right;
+}
+
+.caseNavigation strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-weight: 450;
+  letter-spacing: -0.035em;
+}
+
+@media (width <= 760px) {
+  .heroMeta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .heroMeta p {
+    text-align: left;
+  }
+
+  .facts,
+  .proseSection,
+  .additionalSection,
+  .architectureHeading,
+  .decisions,
+  .technology,
+  .outcome,
+  .note {
+    grid-template-columns: 1fr;
+  }
+
+  .facts {
+    gap: 0;
+  }
+
+  .facts div,
+  .facts div + div {
+    padding: 1.25rem 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .additionalItems,
+  .decisionGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .outcome > a {
+    grid-column: 1;
+  }
+
+  .caseNavigationInner {
+    grid-template-columns: 1fr;
+  }
+
+  .caseNavigation a:last-child {
+    align-items: flex-start;
+    padding-left: 0;
+    border-top: 1px solid var(--color-line-strong);
+    border-left: 0;
+    text-align: left;
+  }
+}
+/* stylelint-enable no-descending-specificity */

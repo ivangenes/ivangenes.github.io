@@ -1,0 +1,23 @@
+# dependencies
+/node_modules/
+
+# next
+/.next/
+/out/
+/next-env.d.ts
+*.tsbuildinfo
+
+# tests
+/coverage/
+/playwright-report/
+/test-results/
+
+# local
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# editors
+.idea/
+.vscode/

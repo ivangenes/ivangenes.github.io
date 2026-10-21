@@ -1,0 +1,108 @@
+.section {
+  padding-block: var(--section-space);
+  background: var(--color-paper);
+}
+
+.headingRow {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.75fr) minmax(18rem, 1.25fr);
+  gap: var(--grid-gap);
+  margin-bottom: clamp(4rem, 8vw, 8rem);
+}
+
+.headingRow > p,
+.period,
+.position > p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.7rem;
+  font-weight: 650;
+  letter-spacing: 0.09em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.headingRow > p {
+  margin-top: 0.55rem;
+}
+
+.headingRow h2 {
+  max-width: 14ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 450;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.timeline {
+  border-top: 1px solid var(--color-line-strong);
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.4fr) minmax(13rem, 0.7fr) minmax(20rem, 1.3fr);
+  gap: var(--grid-gap);
+  padding-block: clamp(2.5rem, 5vw, 4.5rem);
+  border-bottom: 1px solid var(--color-line-strong);
+}
+
+.position h3 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 450;
+  letter-spacing: -0.035em;
+}
+
+.detail > p {
+  max-width: 46rem;
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.detail ul {
+  display: grid;
+  padding: 0;
+  margin: 2rem 0 0;
+  border-top: 1px solid var(--color-line);
+  list-style: none;
+}
+
+.detail li {
+  display: grid;
+  grid-template-columns: minmax(7rem, 0.55fr) 1.45fr;
+  gap: 1rem;
+  padding-block: 0.85rem;
+  border-bottom: 1px solid var(--color-line);
+  color: var(--color-muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.detail strong {
+  color: var(--color-ink);
+  font-weight: 650;
+}
+
+@media (width <= 840px) {
+  .headingRow,
+  .entry {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .detail {
+    margin-top: 1rem;
+  }
+}
+
+@media (width <= 440px) {
+  .detail li {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+}

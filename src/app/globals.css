@@ -1,0 +1,124 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-canvas: #f4f3f0;
+  --color-paper: #faf9f6;
+  --color-ink: #111315;
+  --color-ink-soft: #303337;
+  --color-muted: #62676c;
+  --color-muted-light: #8a8e92;
+  --color-line: #d8d7d3;
+  --color-line-strong: #b9bab9;
+  --color-silver-soft: #ebecea;
+  --color-silver: #ced2d6;
+  --color-silver-dark: #858b92;
+  --color-graphite: #141619;
+  --color-graphite-text: #b6bac0;
+  --font-display: "Iowan Old Style", "Baskerville", "Times New Roman", serif;
+  --font-sans: "Helvetica Neue", "Inter", "Segoe UI", arial, sans-serif;
+  --content-max: 90rem;
+  --page-gutter: clamp(1.25rem, 4vw, 4.5rem);
+  --grid-gap: clamp(1.5rem, 4vw, 5rem);
+  --section-space: clamp(6rem, 11vw, 11rem);
+  --radius-sm: 0.75rem;
+  --radius-lg: clamp(1rem, 2vw, 1.75rem);
+  --shadow-menu: 0 1rem 3rem rgb(17 19 21 / 12%);
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  text-rendering: optimizelegibility;
+}
+
+button,
+a,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a,
+summary {
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+:focus-visible {
+  outline: 2px solid #4776ff;
+  outline-offset: 0.2rem;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+/* stylelint-disable selector-class-pattern -- React Flow exposes hyphenated global class names. */
+.architectureDiagram .react-flow__controls {
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 14%);
+  border-radius: 0.6rem;
+  box-shadow: none;
+}
+
+.architectureDiagram .react-flow__controls-button {
+  border-color: rgb(255 255 255 / 12%);
+  background: rgb(20 22 25 / 94%);
+  fill: var(--color-silver);
+}
+
+.architectureDiagram .react-flow__controls-button:hover {
+  background: #24282d;
+  fill: #fff;
+}
+
+.architectureDiagram .react-flow__edge-text {
+  font-family: var(--font-sans);
+  letter-spacing: 0.03em;
+}
+/* stylelint-enable selector-class-pattern */
+
+.skipLink {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skipLink:focus {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
