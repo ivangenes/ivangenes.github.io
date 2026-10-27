@@ -1,4 +1,4 @@
-import type { Profile } from "@/domain/portfolio";
+import type { Profile, ResumeAsset } from "@/domain/portfolio";
 
 import { ArrowUpRight, Container } from "@/presentation/components";
 
@@ -6,11 +6,10 @@ import styles from "./hero.module.css";
 
 type HeroProps = Readonly<{
   profile: Profile;
-  resumeHref: string;
-  resumeFileName: string;
+  resumes: readonly ResumeAsset[];
 }>;
 
-export function Hero({ profile, resumeHref, resumeFileName }: HeroProps) {
+export function Hero({ profile, resumes }: HeroProps) {
   return (
     <section aria-labelledby="hero-title" className={styles.hero} id="top">
       <Container className={styles.inner}>
@@ -43,9 +42,16 @@ export function Hero({ profile, resumeHref, resumeFileName }: HeroProps) {
               <a className={styles.primaryAction} href="#work">
                 View selected work <ArrowUpRight />
               </a>
-              <a download={resumeFileName} href={resumeHref}>
-                Download resume
-              </a>
+              <details className={styles.resumeSelector}>
+                <summary>Download resume</summary>
+                <div className={styles.resumeOptions}>
+                  {resumes.map((resume) => (
+                    <a download={resume.fileName} href={resume.href} key={resume.href}>
+                      {resume.label}
+                    </a>
+                  ))}
+                </div>
+              </details>
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import { render, screen, within } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 
 import HomePage from "./page";
@@ -42,6 +43,31 @@ describe("HomePage", () => {
     expect(screen.getByRole("link", { name: /Sura Seguros/i })).toHaveAttribute(
       "href",
       "/work/sura-gpass",
+    );
+  });
+
+  it("offers both resume downloads from the hero", async () => {
+    const user = userEvent.setup();
+    render(<HomePage />);
+
+    const hero = screen.getByRole("region", { name: "Ivan Genes" });
+    await user.click(within(hero).getByText("Download resume"));
+
+    expect(within(hero).getByRole("link", { name: "Backend Resume" })).toHaveAttribute(
+      "href",
+      "/resume/ivan-genes-backend-resume.pdf",
+    );
+    expect(within(hero).getByRole("link", { name: "Backend Resume" })).toHaveAttribute(
+      "download",
+      "ivan-genes-backend-resume.pdf",
+    );
+    expect(within(hero).getByRole("link", { name: "Full-Stack Resume" })).toHaveAttribute(
+      "href",
+      "/resume/ivan-genes-full-stack-resume.pdf",
+    );
+    expect(within(hero).getByRole("link", { name: "Full-Stack Resume" })).toHaveAttribute(
+      "download",
+      "ivan-genes-full-stack-resume.pdf",
     );
   });
 });

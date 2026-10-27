@@ -176,7 +176,7 @@
 .actions {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   gap: 1.6rem;
   margin-top: 2rem;
 }
@@ -188,6 +188,60 @@
   letter-spacing: 0.08em;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.resumeSelector {
+  position: relative;
+}
+
+.resumeSelector summary {
+  display: inline-flex;
+  min-height: 3.1rem;
+  align-items: center;
+  color: var(--color-ink);
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+.resumeSelector summary::-webkit-details-marker {
+  display: none;
+}
+
+.resumeSelector summary::after {
+  margin-left: 0.55rem;
+  content: "+";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.resumeSelector[open] summary::after {
+  content: "−";
+}
+
+.resumeOptions {
+  display: grid;
+  min-width: 15rem;
+  padding: 0.45rem;
+  margin-top: 0.45rem;
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-paper);
+  box-shadow: var(--shadow-menu);
+}
+
+.resumeOptions a {
+  padding: 0.8rem 0.9rem;
+  border-radius: 0.45rem;
+}
+
+.resumeOptions a:hover,
+.resumeOptions a:focus-visible {
+  background: var(--color-silver-soft);
 }
 
 .primaryAction {

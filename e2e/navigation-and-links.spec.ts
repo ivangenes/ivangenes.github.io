@@ -12,6 +12,22 @@ test("desktop navigation reaches the main sections", async ({ page }) => {
   ).toBeVisible();
 });
 
+test("hero resume selector offers both downloads", async ({ page }) => {
+  await page.goto("/");
+
+  const hero = page.locator("#top");
+  await hero.getByText("Download resume", { exact: true }).click();
+
+  await expect(hero.getByRole("link", { name: "Backend Resume" })).toHaveAttribute(
+    "download",
+    "ivan-genes-backend-resume.pdf",
+  );
+  await expect(hero.getByRole("link", { name: "Full-Stack Resume" })).toHaveAttribute(
+    "download",
+    "ivan-genes-full-stack-resume.pdf",
+  );
+});
+
 test("mobile navigation and resume selector work with touch-sized viewport", async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 800 });
   await page.goto("/");

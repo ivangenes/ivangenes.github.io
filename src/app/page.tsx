@@ -34,7 +34,6 @@ const personStructuredData = {
 
 export default function HomePage() {
   const content = portfolio.getHomeContent.execute();
-  const primaryResume = content.resumes[0];
   const representativeDiagram = portfolio.getArchitectureDiagramByKey.execute("representative");
 
   if (!representativeDiagram) {
@@ -52,11 +51,7 @@ export default function HomePage() {
       </a>
       <Header navigation={content.navigation} resumes={content.resumes} />
       <main id="main-content">
-        <Hero
-          profile={content.profile}
-          resumeFileName={primaryResume.fileName}
-          resumeHref={primaryResume.href}
-        />
+        <Hero profile={content.profile} resumes={content.resumes} />
         <SelectedWorkPreview projects={content.projects} />
         <ArchitecturePreview content={content.architecture} diagram={representativeDiagram} />
         <Experience entries={content.experience} />
